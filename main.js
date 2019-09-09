@@ -11,42 +11,40 @@
   const dataBlue = item.querySelectorAll('[data-color="blue"]');
   const dataYellow = item.querySelectorAll('[data-color="yellow"]');
 
-  // boxクラスが表示されていたら消す関数
-  function kesu() {
+  // boxが表示されていたら消す関数
+  function hide_boxes() {
     for (let i = 0; i < box.length; i++) {
       box[i].style.display = 'none';
+    }
+  }
+  // boxを表示する関数
+  function block_boxes(data) {
+    for (let i = 0; i < data.length; i++) {
+      data[i].style.display = 'block';
     }
   }
   
   for(let i = 0; i < ids.length; i++) {
     // いずれかのボタンがクリックされたら
     ids[i].addEventListener('click', function() {
-      // 表示されているものがあれば消す
-      kesu();
+      // 表示されているboxがあれば消す
+      hide_boxes();
       // クリックされたボタンがredだった場合
       if (i === 0 ) {
         // データ属性にdata-color="red"がセットされているものを表示する
-        for (let i = 0; i < dataRed.length; i++) {
-          dataRed[i].style.display = 'block';
-        }
+        block_boxes(dataRed);
       // クリックされたボタンがgreenだった場合
-      }else if(i === 1) {
+      } else if (i === 1) {
         // データ属性にdata-color="green"がセットされているものを表示する
-        for (let i = 0; i < dataGreen.length; i++) {
-          dataGreen[i].style.display = 'block';
-        }
+        block_boxes(dataGreen);
       // クリックされたボタンがblueだった場合
-      }else if(i === 2) {
+      } else if (i === 2) {
         // データ属性にdata-color="blue"がセットされているものを表示する
-        for (let i = 0; i < dataBlue.length; i++) {
-          dataBlue[i].style.display = 'block';
-        }
+        block_boxes(dataBlue);
       // クリックされたボタンがyellowだった場合
-      }else{
-        // データ属性にdata-color="yellow"がセットされているものを表示する
-        for (let i=0; i<dataYellow.length; i++) {
-          dataYellow[i].style.display = 'block';
-        }
+      } else {
+        // データ属性にdata-color="yellow"がセットされているものを表示する\
+        block_boxes(dataYellow);
       }
     });
   }
