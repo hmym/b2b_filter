@@ -18,7 +18,7 @@
     }
   }
   // boxを表示する関数
-  function block_boxes(data) {
+  function display_boxes(data) {
     for (let i = 0; i < data.length; i++) {
       data[i].style.display = 'block';
     }
@@ -32,19 +32,19 @@
       // クリックされたボタンがredだった場合
       if (i === 0 ) {
         // データ属性にdata-color="red"がセットされているものを表示する
-        block_boxes(dataRed);
+        display_boxes(dataRed);
       // クリックされたボタンがgreenだった場合
       } else if (i === 1) {
         // データ属性にdata-color="green"がセットされているものを表示する
-        block_boxes(dataGreen);
+        display_boxes(dataGreen);
       // クリックされたボタンがblueだった場合
       } else if (i === 2) {
         // データ属性にdata-color="blue"がセットされているものを表示する
-        block_boxes(dataBlue);
+        display_boxes(dataBlue);
       // クリックされたボタンがyellowだった場合
       } else {
         // データ属性にdata-color="yellow"がセットされているものを表示する\
-        block_boxes(dataYellow);
+        display_boxes(dataYellow);
       }
     });
   }
